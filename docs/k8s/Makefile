@@ -11,7 +11,7 @@ SA_NAME ?= tailscale
 KUBE_SECRET ?= tailscale
 
 build:
-	@docker build . -t $(IMAGE_TAG)
+	@docker build . -t $(IMAGE_TAG) --platform linux/amd64
 
 push: build
 	@docker push $(IMAGE_TAG)
